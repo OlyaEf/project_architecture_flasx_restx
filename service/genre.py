@@ -1,13 +1,16 @@
 # здесь бизнес логика, в виде классов или методов. сюда импортируются DAO классы из пакета dao и модели из dao.model
 # некоторые методы могут оказаться просто прослойкой между dao и views,
 # но чаще всего будет какая-то логика обработки данных сейчас или в будущем.
+from dao.genre import GenreDAO
 
-# Пример
 
-# class BookService:
-#
-#     def __init__(self, book_dao: BookDAO):
-#         self.book_dao = book_dao
-#
-#     def get_books(self) -> List["Book"]:
-#         return self.book_dao.get_books()
+class GenreService:
+
+    def __init__(self, dao: GenreDAO):
+        self.dao = dao
+
+    def get_all(self):
+        return self.dao.get_all()
+
+    def get_one(self, uid):
+        return self.dao.get_one(uid)
