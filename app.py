@@ -5,7 +5,6 @@ from flask import Flask
 from flask_restx import Api
 
 from config import Config
-from dao.movie import MovieDAO
 from setup_db import db
 
 
